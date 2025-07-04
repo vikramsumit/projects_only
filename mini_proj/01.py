@@ -36,8 +36,8 @@ if __name__ == "__main__":
     input_pdf = "/home/raju/code only/projects_only/pdf_scrap/pdf_env/BTECHIT.pdf"
 
     # --- User Inputs ---
-    page_range = input("Enter range (e.g., 2-5), or leave blank: ").strip()
     specific = input("Enter specific pages separated by comma (e.g., 1,7,10): ").strip()
+    page_range = input("Enter range (e.g., 2-5), or leave blank: ").strip()
 
     # Parse inputs
     page_range_tuple = None
