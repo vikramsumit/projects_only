@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me - My Portfolio</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' };
+    // Apply saved theme or OS preference on load
+    if (localStorage.theme === 'dark' || (!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300">
+  <!-- Navigation Bar -->
+  <header class="bg-white dark:bg-gray-800 shadow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        <div>
+          <a href="index.html" class="text-2xl font-bold text-gray-900 dark:text-white">MyPortfolio</a>
+        </div>
+        <nav class="hidden md:flex space-x-4">
+          <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-blue-500">Home</a>
+          <a href="about.html" class="text-blue-500 font-semibold">About Me</a>
+          <a href="projects.html" class="text-gray-700 dark:text-gray-300 hover:text-blue-500">Projects</a>
+          <a href="blog.html" class="text-gray-700 dark:text-gray-300 hover:text-blue-500">Blog</a>
+          <a href="contact.html" class="text-gray-700 dark:text-gray-300 hover:text-blue-500">Contact</a>
+        </nav>
+        <div class="flex items-center">
+          <button id="theme-toggle" class="text-xl p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">🌙</button>
+          <button id="menu-btn" class="text-gray-700 dark:text-gray-300 md:hidden p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">
+            ☰
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white dark:bg-gray-800">
+      <a href="index.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Home</a>
+      <a href="about.html" class="block px-4 py-2 text-blue-500 font-semibold">About Me</a>
+      <a href="projects.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Projects</a>
+      <a href="blog.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Blog</a>
+      <a href="contact.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Contact</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-3xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
+    <h1 class="text-4xl font-bold mb-4">About Me</h1>
+    <p class="mb-4">Hello! I'm [Your Name], a web developer passionate about creating interactive and dynamic websites. I specialize in frontend development and have experience with Tailwind CSS and JavaScript.</p>
+    <p class="mb-4">In my free time, I enjoy learning about new technologies, working on personal projects, and contributing to open-source.</p>
+
+    <!-- AI-Generated Content Section -->
+    <section class="mt-8 p-6 bg-gray-100 dark:bg-gray-800 rounded-lg shadow">
+      <h2 class="text-2xl font-semibold mb-3">AI-Assisted About Me Generator</h2>
+      <p class="mb-3">Enter a prompt below to generate a dynamic "About Me" paragraph. You can then edit the generated content.</p>
+      <textarea id="promptAbout" rows="3" class="w-full p-2 mb-2 border rounded" placeholder="e.g., Write a friendly intro about me as a software developer"></textarea>
+      <button id="generateAbout" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Generate</button>
+      <div id="aboutContent" contenteditable="true" class="mt-4 p-4 bg-white dark:bg-gray-700 border rounded min-h-[4rem]">
+        <!-- Generated content will appear here and can be edited before publishing. -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 dark:bg-gray-800 text-center p-4 mt-12">
+    <p class="text-sm">&copy; 2025 My Name. All rights reserved.</p>
+    <p class="text-sm">
+      <a href="#" class="text-blue-500 hover:underline">Twitter</a> |
+      <a href="#" class="text-blue-500 hover:underline">LinkedIn</a> |
+      <a href="#" class="text-blue-500 hover:underline">GitHub</a>
+    </p>
+  </footer>
+
+  <!-- JavaScript for theme toggle, menu, and Gemini API call -->
+  <script>
+    // Set theme icon
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    if (document.documentElement.classList.contains('dark')) {
+      themeToggleBtn.textContent = '☀️';
+    } else {
+      themeToggleBtn.textContent = '🌙';
+    }
+    // Toggle dark mode (same as Home page)
+    themeToggleBtn.addEventListener('click', function() {
+      document.documentElement.classList.toggle('dark');
+      if (document.documentElement.classList.contains('dark')) {
+        this.textContent = '☀️';
+        localStorage.theme = 'dark';
+      } else {
+        this.textContent = '🌙';
+        localStorage.theme = 'light';
+      }
+    });
+    // Mobile menu toggle
+    document.getElementById('menu-btn').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Gemini API call for About page
+    const API_KEY = 'YOUR_API_KEY_HERE'; // Insert your Gemini API key (for prototyping only):contentReference[oaicite:6]{index=6}:contentReference[oaicite:7]{index=7}
+    document.getElementById('generateAbout').addEventListener('click', async function() {
+      const prompt = document.getElementById('promptAbout').value;
+      if (!prompt) return;
+      this.textContent = 'Loading...';
+      const res = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${API_KEY}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [{ parts: [{ text: prompt }] }]
+          })
+        }
+      );
+      const data = await res.json();
+      this.textContent = 'Generate';
+      const text = data?.candidates?.[0]?.content?.parts?.[0]?.text || '';
+      document.getElementById('aboutContent').innerText = text;
+    });
+  </script>
+</body>
+</html>

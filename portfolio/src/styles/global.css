@@ -1,0 +1,72 @@
+/* Custom scrollbar styles for a cleaner look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: theme('colors.background.light'); /* Light mode background */
+  border-radius: 10px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: theme('colors.background.dark'); /* Dark mode background */
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme('colors.primary.light'); /* Light mode thumb */
+  border-radius: 10px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: theme('colors.primary.dark'); /* Dark mode thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.secondary.light'); /* Light mode thumb hover */
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.secondary.dark'); /* Dark mode thumb hover */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background-light text-text-light transition-colors duration-300;
+}
+
+body.dark {
+  @apply bg-background-dark text-text-dark;
+}
+
+/* Custom styles for the typography plugin for markdown content */
+.prose {
+  @apply max-w-none; /* Override default max-width */
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  @apply text-text-light dark:text-text-dark font-bold;
+}
+
+.prose p {
+  @apply text-text-light dark:text-text-dark;
+}
+
+.prose a {
+  @apply text-primary-light dark:text-primary-dark hover:underline;
+}
+
+.prose code {
+  @apply bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded px-1 py-0.5;
+}
+
+.prose pre {
+  @apply bg-gray-800 text-gray-100 rounded-lg p-4 overflow-x-auto;
+}
+
+.prose li {
+  @apply text-text-light dark:text-text-dark;
+}

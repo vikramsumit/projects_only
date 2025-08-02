@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - My Portfolio</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' };
+    if (localStorage.theme === 'dark' || (!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300">
+  <!-- Navigation Bar -->
+  <header class="bg-white dark:bg-gray-800 shadow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        <div>
+          <a href="index.html" class="text-2xl font-bold text-gray-900 dark:text-white">MyPortfolio</a>
+        </div>
+        <nav class="hidden md:flex space-x-4">
+          <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-blue-500">Home</a>
+          <a href="about.html" class="text-gray-700 dark:text-gray-300 hover:text-blue-500">About Me</a>
+          <a href="projects.html" class="text-blue-500 font-semibold">Projects</a>
+          <a href="blog.html" class="text-gray-700 dark:text-gray-300 hover:text-blue-500">Blog</a>
+          <a href="contact.html" class="text-gray-700 dark:text-gray-300 hover:text-blue-500">Contact</a>
+        </nav>
+        <div class="flex items-center">
+          <button id="theme-toggle" class="text-xl p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">🌙</button>
+          <button id="menu-btn" class="text-gray-700 dark:text-gray-300 md:hidden p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">
+            ☰
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden bg-white dark:bg-gray-800">
+      <a href="index.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Home</a>
+      <a href="about.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">About Me</a>
+      <a href="projects.html" class="block px-4 py-2 text-blue-500 font-semibold">Projects</a>
+      <a href="blog.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Blog</a>
+      <a href="contact.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Contact</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
+    <h1 class="text-4xl font-bold mb-4">Projects</h1>
+    <p class="mb-6">A showcase of some of my projects. Each project includes a brief description and a link.</p>
+
+    <!-- Project Cards -->
+    <div class="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-lg shadow">
+        <h3 class="text-2xl font-semibold mb-2">Project One</h3>
+        <p class="mb-4">A short description of project one. This project demonstrates responsive design and interactive elements.</p>
+        <a href="#" class="text-blue-500 hover:underline">View Project</a>
+      </div>
+      <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-lg shadow">
+        <h3 class="text-2xl font-semibold mb-2">Project Two</h3>
+        <p class="mb-4">A short description of project two. This project showcases API integration and animations.</p>
+        <a href="#" class="text-blue-500 hover:underline">View Project</a>
+      </div>
+      <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-lg shadow">
+        <h3 class="text-2xl font-semibold mb-2">Project Three</h3>
+        <p class="mb-4">A short description of project three. This project is focused on performance optimization and UI design.</p>
+        <a href="#" class="text-blue-500 hover:underline">View Project</a>
+      </div>
+      <!-- Add more projects as needed -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 dark:bg-gray-800 text-center p-4 mt-12">
+    <p class="text-sm">&copy; 2025 My Name. All rights reserved.</p>
+    <p class="text-sm">
+      <a href="#" class="text-blue-500 hover:underline">Twitter</a> |
+      <a href="#" class="text-blue-500 hover:underline">LinkedIn</a> |
+      <a href="#" class="text-blue-500 hover:underline">GitHub</a>
+    </p>
+  </footer>
+
+  <!-- JavaScript for theme toggle and mobile menu -->
+  <script>
+    // Set theme icon
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    if (document.documentElement.classList.contains('dark')) {
+      themeToggleBtn.textContent = '☀️';
+    } else {
+      themeToggleBtn.textContent = '🌙';
+    }
+    themeToggleBtn.addEventListener('click', function() {
+      document.documentElement.classList.toggle('dark');
+      if (document.documentElement.classList.contains('dark')) {
+        this.textContent = '☀️';
+        localStorage.theme = 'dark';
+      } else {
+        this.textContent = '🌙';
+        localStorage.theme = 'light';
+      }
+    });
+    document.getElementById('menu-btn').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
