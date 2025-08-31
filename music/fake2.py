@@ -74,23 +74,23 @@ def generate_pdf_from_png(png_path, pdf_path):
     print("Saved PDF:", pdf_path)
 
 if __name__ == "__main__":
-    data = {
-        "BATCH NO": "* 2079",
-        "MACH ID": "06652",
-        "TIME": datetime.datetime.now().strftime("%I:%M %p"),
-        "DATE": datetime.date.today().strftime("%d-%m-%y"),
-        "AGGT10mm": "0000 Kgs",
-        "AGGT20mm": "3120 Kgs",
-        "AGGT30mm": "0000 Kgs",
-        "CEMT01": "1000 Kgs",
-        "CEMT02": "0000 Kgs",
-        "SAND01": "1525 Kgs",
-        "SAND02": "0000 Kgs",
-        "WATER": "522 Ltrs",
-        "ADDITIVE": "00.00 Ltrs",
-        "TOTAL WT": "6167.00 Kgs",
-        "CUM": "000002.56"
-    }
+    # data = {
+    #     "BATCH NO": "* 2079",
+    #     "MACH ID": "06652",
+    #     "TIME": datetime.datetime.now().strftime("%I:%M %p"),
+    #     "DATE": datetime.date.today().strftime("%d-%m-%y"),
+    #     "AGGT10mm": "0000 Kgs",
+    #     "AGGT20mm": "3120 Kgs",
+    #     "AGGT30mm": "0000 Kgs",
+    #     "CEMT01": "1000 Kgs",
+    #     "CEMT02": "0000 Kgs",
+    #     "SAND01": "1525 Kgs",
+    #     "SAND02": "0000 Kgs",
+    #     "WATER": "522 Ltrs",
+    #     "ADDITIVE": "00.00 Ltrs",
+    #     "TOTAL WT": "6167.00 Kgs",
+    #     "CUM": "000002.56"
+    # }
     data = {
         "BATCH NO": "*2078",
         "MACH ID": "6652",
