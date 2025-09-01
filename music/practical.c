@@ -34,9 +34,7 @@ int main() {
         } else {
             printf("Child terminated abnormally.\n");
         }
-
         printf("Parent process ends.\n");
     }
-
     return 0;
 }
