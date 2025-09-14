@@ -140,7 +140,24 @@ class YouTubeDownloaderApp:
             "no_warnings": True,
             # retry on connection error
             "retries": 3,
+            "noplaylist": True, #if want to download only one video
         }
+
+
+        ''' if want to download only one video
+        ydl_opts = {
+            "format": self._format_for_choice(choice),
+            "outtmpl": os.path.join(outdir, "%(title)s.%(ext)s"),
+            "noprogress": True,
+            "progress_hooks": [self._progress_hook],
+            "postprocessors": [{'key': 'FFmpegMetadata'}],
+            "quiet": True,
+            "no_warnings": True,
+            "retries": 3,
+            # IMPORTANT: prevent yt-dlp from downloading an entire playlist
+            "noplaylist": True,
+        }'''
+
 
         try:
             self._set_status_safe("Starting download...")

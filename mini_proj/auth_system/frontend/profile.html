@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopHub - Your Premium Shopping Destination</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide-in {
+            animation: slideIn 0.5s ease-out forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart-badge {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+    </style>
+</head>
+<body class="font-['Inter'] bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-blue-600">ShopHub</h1>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
+                    <a href="#categories" class="text-gray-700 hover:text-blue-600 transition-colors">Categories</a>
+                    <a href="#products" class="text-gray-700 hover:text-blue-600 transition-colors">Products</a>
+                    <a href="#deals" class="text-gray-700 hover:text-blue-600 transition-colors">Deals</a>
+                </nav>
+
+                <!-- Search Bar -->
+                <div class="flex-1 max-w-lg mx-8 hidden md:block">
+                    <div class="relative">
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Search products..."
+                            class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        >
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i data-lucide="search" class="h-5 w-5 text-gray-400"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Actions -->
+                <div class="flex items-center space-x-4">
+                    <button id="userBtn" class="text-gray-700 hover:text-blue-600 transition-colors">
+                        <i data-lucide="user" class="h-6 w-6"></i>
+                    </button>
+                    <button id="cartBtn" class="text-gray-700 hover:text-blue-600 transition-colors relative">
+                        <i data-lucide="shopping-cart" class="h-6 w-6"></i>
+                        <span id="cartBadge" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex:items-center justify-center cart-badge hidden">0</span>
+                    </button>
+                    <button id="menuBtn" class="md:hidden text-gray-700">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="md:hidden hidden bg-white border-t border-gray-200">
+            <div class="px-4 py-2">
+                <input
+                    type="text"
+                    id="mobileSearchInput"
+                    placeholder="Search products..."
+                    class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                >
+            </div>
+            <nav class="px-4 py-2 space-y-2">
+                <a href="#home" class="block py-2 text-gray-700 hover:text-blue-600">Home</a>
+                <a href="#categories" class="block py-2 text-gray-700 hover:text-blue-600">Categories</a>
+                <a href="#products" class="block py-2 text-gray-700 hover:text-blue-600">Products</a>
+                <a href="#deals" class="block py-2 text-gray-700 hover:text-blue-600">Deals</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    Welcome to ShopHub
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-blue-100">
+                    Discover amazing products at unbeatable prices
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button id="shopNowBtn" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                        Shop Now
+                    </button>
+                    <button id="exploreBtn" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                        Explore Categories
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Shop by Category</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="category-card bg-gradient-to-br from-blue-500 to-blue-600 text-white p-6 rounded-lg text-center cursor-pointer hover:shadow-lg transition-shadow" data-category="electronics">
+                    <i data-lucide="smartphone" class="h-12 w-12 mx-auto mb-4"></i>
+                    <h3 class="text-xl font-semibold">Electronics</h3>
+                </div>
+                <div class="category-card bg-gradient-to-br from-green-500 to-green-600 text-white p-6 rounded-lg text-center cursor-pointer hover:shadow-lg transition-shadow" data-category="clothing">
+                    <i data-lucide="shirt" class="h-12 w-12 mx-auto mb-4"></i>
+                    <h3 class="text-xl font-semibold">Clothing</h3>
+                </div>
+                <div class="category-card bg-gradient-to-br from-purple-500 to-purple-600 text-white p-6 rounded-lg text-center cursor-pointer hover:shadow-lg transition-shadow" data-category="home">
+                    <i data-lucide="home" class="h-12 w-12 mx-auto mb-4"></i>
+                    <h3 class="text-xl font-semibold">Home & Garden</h3>
+                </div>
+                <div class="category-card bg-gradient-to-br from-red-500 to-red-600 text-white p-6 rounded-lg text-center cursor-pointer hover:shadow-lg transition-shadow" data-category="sports">
+                    <i data-lucide="dumbbell" class="h-12 w-12 mx-auto mb-4"></i>
+                    <h3 class="text-xl font-semibold">Sports</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section id="products" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Featured Products</h2>
+                <div class="flex gap-2">
+                    <button id="gridView" class="p-2 bg-blue-600 text-white rounded-lg">
+                        <i data-lucide="grid" class="h-5 w-5"></i>
+                    </button>
+                    <button id="listView" class="p-2 bg-gray-200 text-gray-600 rounded-lg hover:bg-gray-300">
+                        <i data-lucide="list" class="h-5 w-5"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="productsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Products will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Deals Section -->
+    <section id="deals" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Special Deals</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-r from-red-500 to-pink-500 text-white p-8 rounded-lg text-center">
+                    <h3 class="text-2xl font-bold mb-4">Flash Sale!</h3>
+                    <p class="text-lg mb-4">Up to 50% off on selected items</p>
+                    <button class="bg-white text-red-500 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                        Shop Sale
+                    </button>
+                </div>
+                <div class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white p-8 rounded-lg text-center">
+                    <h3 class="text-2xl font-bold mb-4">Free Shipping</h3>
+                    <p class="text-lg mb-4">On orders over $50</p>
+                    <button class="bg-white text-blue-500 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                        Learn More
+                    </button>
+                </div>
+                <div class="bg-gradient-to-r from-green-500 to-teal-500 text-white p-8 rounded-lg text-center">
+                    <h3 class="text-2xl font-bold mb-4">New Arrivals</h3>
+                    <p class="text-lg mb-4">Check out our latest products</p>
+                    <button class="bg-white text-green-500 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                        Browse New
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cartModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg max-w-2xl w-full max-h-[80vh] overflow-hidden slide-in">
+                <div class="p-6 border-b border-gray-200">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-2xl font-bold text-gray-900">Shopping Cart</h3>
+                        <button id="closeCartBtn" class="text-gray-400 hover:text-gray-600">
+                            <i data-lucide="x" class="h-6 w-6"></i>
+                        </button>
+                    </div>
+                </div>
+                <div id="cartItems" class="p-6 max-h-96 overflow-y-auto">
+                    <!-- Cart items will be populated here -->
+                </div>
+                <div class="p-6 border-t border-gray-200">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-lg font-semibold">Total: $<span id="cartTotal">0.00</span></span>
+                    </div>
+                    <button id="checkoutBtn" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                        Proceed to Checkout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Modal -->
+    <div id="productModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-hidden slide-in">
+                <div class="p-6 border-b border-gray-200">
+                    <div class="flex justify-between items-center">
+                        <h3 id="productModalTitle" class="text-2xl font-bold text-gray-900">Product Details</h3>
+                        <button id="closeProductBtn" class="text-gray-400 hover:text-gray-600">
+                            <i data-lucide="x" class="h-6 w-6"></i>
+                        </button>
+                    </div>
+                </div>
+                <div id="productModalContent" class="p-6">
+                    <!-- Product details will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">ShopHub</h3>
+                    <p class="text-gray-400">Your trusted online shopping destination for quality products at great prices.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Shipping</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Categories</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Electronics</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Clothing</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Home & Garden</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Sports</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i data-lucide="facebook" class="h-6 w-6"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i data-lucide="twitter" class="h-6 w-6"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i data-lucide="instagram" class="h-6 w-6"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 ShopHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

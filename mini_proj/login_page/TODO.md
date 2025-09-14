@@ -1,0 +1,6 @@
+- [x] Update background color of .card in login.html to #E6FFF9
+- [x] Update background color of .card in signup.html to #E6FFF9
+- [x] Update body background to #FFF1F6 in login.html
+- [x] Update body background to #FFF1F6 in signup.html
+- [x] Make card height responsive (auto on mobile) in login.html
+- [x] Make card height responsive (auto on mobile) in signup.html

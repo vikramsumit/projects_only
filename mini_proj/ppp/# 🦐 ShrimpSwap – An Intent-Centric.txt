@@ -1,0 +1,86 @@
+# 🦐 ShrimpSwap – An Intent-Centric DEX Playground  
+
+![Shrimp Banner](https://emojicdn.elk.sh/🦐)  
+
+> Serious tech, silly shrimp. A demo of how **Anoma intents** can transform DEXs into fun, seamless experiences.  
+
+---
+
+## 📖 What is ShrimpSwap?  
+ShrimpSwap is a **lightweight, intent-centric decentralized exchange (DEX)** designed to showcase **Anoma’s intent architecture**.  
+Instead of wrestling with AMMs or order books, users simply state their **intent**, and ShrimpSwap + solver magic handles the rest.  
+
+In short:  
+💬 *“I want to swap Token A for Token B at this range.”*  
+🦐 Shrimp interprets your intent.  
+⚡ Solver finds the best path.  
+🎉 Swap happens. You smile.  
+
+---
+
+## 🎨 Why ShrimpSwap?  
+Because most DEXes feel like tax forms. ShrimpSwap feels like a **party under the sea** 🌊  
+
+- 🦐 **Shrimp Mascots** – animated helpers make swaps fun.  
+- ⚡ **Simple UI** – only essentials, no overload.  
+- 🔮 **Intent-Centric** – powered by Anoma’s architecture.  
+- 🛡️ **Privacy-friendly** – shielded swaps possible in future.  
+
+---
+
+## 🔑 Features
+- Express **swap intent** easily.  
+- Shrimp animation for **solver process**.  
+- Playful **result visualization** with confetti.  
+- Cross-chain compatibility (demo simulated).  
+- **Educational facts** about Anoma during swaps.  
+
+---
+
+## 🧑‍💻 How it Works
+1. **Frontend** – React + Tailwind + Framer Motion for a clean UI.  
+2. **Mock Solver** – JSON file simulating solver responses.  
+3. **User Flow** –  
+   - Input → Intent created  
+   - Shrimp swims → Finds liquidity  
+   - Intent resolved → Swap complete 🎉  
+
+---
+
+## 🎮 User Experience
+- **Landing Page** – Big happy shrimp: *“What do you want to swap today?”*  
+- **Swap Screen** – Choose tokens + amount.  
+- **Processing** – Shrimp swims to find liquidity.  
+- **Result** – *“Your intent is fulfilled!”* + confetti 🎉  
+
+---
+
+## 🚀 Why It Matters
+ShrimpSwap is not just a meme. It’s a **community demo tool**:  
+- Simplifies **understanding intents**.  
+- Makes Anoma’s architecture approachable.  
+- Could evolve into real prototypes on testnets.  
+
+---
+
+## 📦 Tech Stack
+- React + Vite + TailwindCSS  
+- Framer Motion (animations)  
+- JSON Mock backend  
+- Hosted on Vercel/Netlify  
+
+---
+
+## 🛠️ Installation
+```bash
+# Clone repo
+git clone https://github.com/your-username/shrimpswap.git  
+
+# Go into project
+cd shrimpswap  
+
+# Install dependencies
+npm install  
+
+# Run locally
+npm run dev  
