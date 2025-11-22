@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📝 Modern To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="navbar-brand">
+                    <h1>📝 TaskFlow</h1>
+                </div>
+                <button id="darkModeToggle" class="btn btn--outline btn--sm">
+                    <span id="darkModeIcon">🌙</span>
+                    <span id="darkModeText">Dark Mode</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="todo-container">
+                <!-- Header -->
+                <div class="todo-header">
+                    <h2>📝 My Tasks</h2>
+                    <p class="todo-subtitle">Stay organized and productive</p>
+                </div>
+
+                <!-- Add Task Section -->
+                <div class="add-task-section">
+                    <div class="input-group">
+                        <input 
+                            type="text" 
+                            id="taskInput" 
+                            class="form-control task-input" 
+                            placeholder="What needs to be done?"
+                            maxlength="100"
+                        >
+                        <input 
+                            type="date" 
+                            id="dueDateInput" 
+                            class="form-control date-input"
+                        >
+                        <button id="addTaskBtn" class="btn btn--primary">
+                            <span>Add Task</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Filter Buttons -->
+                <div class="filter-section">
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="active">Active</button>
+                        <button class="filter-btn" data-filter="completed">Completed</button>
+                    </div>
+                    <div class="task-count">
+                        <span id="taskCount">0 tasks</span>
+                    </div>
+                </div>
+
+                <!-- Task List -->
+                <div class="task-list-container">
+                    <ul id="taskList" class="task-list">
+                        <!-- Tasks will be dynamically added here -->
+                    </ul>
+                    <div id="emptyState" class="empty-state">
+                        <div class="empty-icon">📋</div>
+                        <h3>No tasks yet</h3>
+                        <p>Add a task above to get started!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>TaskFlow</h4>
+                    <p>Stay organized, stay productive</p>
+                </div>
+                <div class="footer-section">
+                    <h5>Features</h5>
+                    <ul>
+                        <li>Task Management</li>
+                        <li>Due Dates</li>
+                        <li>Dark Mode</li>
+                        <li>Filtering</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Connect</h5>
+                    <div class="social-links">
+                        <a href="#" target="_blank" aria-label="GitHub">🔗</a>
+                        <a href="#" target="_blank" aria-label="Twitter">🐦</a>
+                        <a href="#" target="_blank" aria-label="LinkedIn">💼</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TaskFlow. Made with ❤️ for productivity</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -141,7 +141,13 @@ class YouTubeDownloaderApp:
             # retry on connection error
             "retries": 3,
             "noplaylist": True, #if want to download only one video
+            "http_headers": {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36",
+                "Referer": "https://www.youtube.com"
+            },
+            "verbose": True,
         }
+        
 
 
         ''' if want to download only one video
@@ -161,13 +167,29 @@ class YouTubeDownloaderApp:
 
         try:
             self._set_status_safe("Starting download...")
-            with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-                # attempt metadata extraction first so we can show title in UI
+            # Extract info without format to avoid format-related errors
+            info_opts = ydl_opts.copy()
+            info_opts.pop("format", None)
+            with yt_dlp.YoutubeDL(info_opts) as ydl:
                 info = ydl.extract_info(url, download=False)
                 title = info.get("title", "video")
                 self._set_status_safe(f"Downloading: {title}")
-                # now actually download
-                ydl.download([url])
+
+            # Now set the format and test it
+            ydl_opts["format"] = self._format_for_choice(choice)
+            test_ydl_opts = ydl_opts.copy()
+            test_ydl_opts.update({"skip_download": True, "quiet": True})
+
+            try:
+                with yt_dlp.YoutubeDL(test_ydl_opts) as test_ydl:
+                    test_ydl.download([url])
+            except yt_dlp.utils.DownloadError as e:
+                print("⚠️ Requested format not available. Falling back to 'best'")
+                ydl_opts["format"] = "best"
+
+            # Now download with final format
+            with yt_dlp.YoutubeDL(ydl_opts) as final_ydl:
+                final_ydl.download([url])
             self._set_status_safe("Finished.")
             self._finish_safe(success=True, message="Download finished.")
         except Exception as e:
