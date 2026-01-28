@@ -20,7 +20,7 @@ void dfs(Graph *g, int s) {
     free(visited);
 }
 
-int main(void) {
+// int main(void) {
     Graph *g = createGraph(6);
     addEdge(g,0,1); addEdge(g,0,2); addEdge(g,1,3);
     addEdge(g,2,3); addEdge(g,3,4); addEdge(g,4,5);
