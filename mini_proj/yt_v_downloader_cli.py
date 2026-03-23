@@ -76,7 +76,7 @@ def human_readable_size(bytes_num: int) -> str:
         if bytes_num < 1024.0:
             return f"{bytes_num:3.1f}{unit}"
         bytes_num /= 1024.0
-    # return f"{bytes_num:.1f}PB"
+    return f"{bytes_num:.1f}PB"
 
 
 def human_time(seconds) -> str:
