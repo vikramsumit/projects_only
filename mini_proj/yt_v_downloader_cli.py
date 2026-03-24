@@ -69,7 +69,7 @@ def format_selector(choice: str) -> str:
     return "best"
 
 
-def human_readable_size(bytes_num: int) -> str:
+# def human_readable_size(bytes_num: int) -> str:
     if not bytes_num:
         return "N/A"
     for unit in ("B", "KB", "MB", "GB", "TB"):
