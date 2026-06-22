@@ -1,0 +1,17 @@
+{
+  "name": "online-examination-management-system",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm --workspace oems-backend run dev\" \"npm --workspace oems-frontend run dev\"",
+    "seed": "npm --workspace oems-backend run seed",
+    "build": "npm --workspace oems-frontend run build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
