@@ -50,11 +50,7 @@ Screenshots are not available yet. Placeholder section for future captures.
 
 ## Author
 
-Raju Raj
-
-GitHub: [github.com/raju](https://github.com/raju)
-
-LinkedIn: [Coming soon](#)
+GitHub: [github.com/vikram](https://github.com/vikramsumit)
 
 ## License
 
