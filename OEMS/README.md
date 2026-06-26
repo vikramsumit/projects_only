@@ -1,29 +1,40 @@
 # Online Examination Management System
 
-A minimal full-stack college-project friendly exam platform built with React, Vite, Tailwind CSS, Node.js, Express, MongoDB, Mongoose, JWT, and bcrypt.
+A full-stack academic project that simulates an online examination platform for students, teachers, and administrators. It is designed to showcase role-based access, exam management, and automated evaluation in a practical web application.
+
+[![React](https://img.shields.io/badge/React-18-61DAFB)](https://react.dev/)
+[![Node.js](https://img.shields.io/badge/Node.js-18.x-green)](https://nodejs.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248)](https://www.mongodb.com/)
+[![Express](https://img.shields.io/badge/Express-4.x-lightgrey)](https://expressjs.com/)
 
 ## Features
 
 - Student registration and login
-- Role-based dashboards for Student, Teacher, and Admin
+- Role-based dashboards for student, teacher, and admin
 - Teacher exam creation and MCQ question management
-- Student exam attempt and automatic scoring
-- Student result history
-- Teacher result view per exam
-- Admin user role management, exam list, and simple reports
+- Automatic scoring and result tracking
+- Admin moderation and reporting workflows
 
 ## Project Structure
 
 ```text
-backend/
-  config/ controllers/ middleware/ models/ routes/ seed/ utils/
-frontend/
-  src/components src/context src/layouts src/pages src/routes src/services
+OEMS/
+├── backend/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   └── utils/
+├── frontend/
+│   ├── src/
+│   └── public/
+└── README.md
 ```
 
 ## Setup
 
-You can run both apps from the project root:
+Run both apps from the project root:
 
 ```bash
 npm install
@@ -33,34 +44,12 @@ npm run seed
 npm run dev
 ```
 
-Backend runs on `http://localhost:5000` and frontend runs on `http://localhost:5173`.
-
-### Separate Terminal Setup
-
-Backend:
-
-```bash
-cd backend
-npm install
-cp .env.example .env
-npm run seed
-npm run dev
-```
-
-Frontend:
-
-```bash
-cd frontend
-npm install
-cp .env.example .env
-npm run dev
-```
-
-Frontend runs on `http://localhost:5173`.
+Backend: http://localhost:5000
+Frontend: http://localhost:5173
 
 ## Demo Accounts
 
-After running `npm run seed` in `backend/`:
+After running the seed command:
 
 | Role | Email | Password |
 | --- | --- | --- |
@@ -68,9 +57,25 @@ After running `npm run seed` in `backend/`:
 | Teacher | teacher@oems.com | password123 |
 | Student | student@oems.com | password123 |
 
-## Notes
+## Screenshots
 
-- MongoDB should be running locally before seeding or starting the backend.
-- Student registration always creates a `student` account.
-- Admin can promote users to `teacher` or `admin`.
-- Exam scoring is calculated on the backend from saved correct options.
+Screenshots will be added soon.
+
+## Future Improvements
+
+- Add live exam timer and proctoring support
+- Improve analytics and reporting
+- Add test question banks and import/export
+- Strengthen authentication and role validation
+
+## Author
+
+Raju Raj
+
+GitHub: [github.com/raju](https://github.com/raju)
+
+LinkedIn: [Coming soon](#)
+
+## License
+
+MIT

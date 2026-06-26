@@ -1,16 +1,70 @@
-# React + Vite
+# To-Do App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lightweight task management application built with React and Vite. This project is a simple and clean example of building a modern frontend UI for tracking daily tasks and managing progress.
 
-Currently, two official plugins are available:
+[![React](https://img.shields.io/badge/React-18-61DAFB)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-5-646CFF)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC)](https://tailwindcss.com/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## React Compiler
+This project demonstrates how to create a responsive and visually simple to-do application using React. It is suitable for showcasing frontend fundamentals, component-based structure, and UI polish for beginner portfolio work.
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- Add and manage daily tasks
+- Clean and minimal user interface
+- Responsive layout for desktop and mobile
+- Easy-to-understand React structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Technologies Used
+
+- Language: JavaScript
+- Framework: React, Vite
+- Styling: Tailwind CSS
+- Tools: VS Code, GitHub, npm
+
+## Installation
+
+```bash
+npm install
+npm run dev
+```
+
+## Usage
+
+Open the local development server in your browser to use the application and test task workflows.
+
+## Project Structure
+
+```text
+To-Do/
+├── src/
+├── public/
+├── package.json
+├── vite.config.js
+└── README.md
+```
+
+## Screenshots
+
+Screenshots will be added soon.
+
+## Future Improvements
+
+- Add task editing and deletion flow
+- Persist tasks with local storage
+- Add categories and filtering
+- Improve animation and accessibility
+
+## Author
+
+Raju Raj
+
+GitHub: [github.com/raju](https://github.com/raju)
+
+LinkedIn: [Coming soon](#)
+
+## License
+
+MIT

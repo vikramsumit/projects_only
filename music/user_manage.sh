@@ -1,4 +1,4 @@
-#!/bin/bash
+#NEVER EXECUTE THIS ONE
 
 # Check for root
 if [ "$EUID" -ne 0 ]; then
