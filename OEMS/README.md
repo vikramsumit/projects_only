@@ -70,12 +70,8 @@ Screenshots will be added soon.
 
 ## Author
 
-Raju Raj
-
-GitHub: [github.com/raju](https://github.com/raju)
-
-LinkedIn: [Coming soon](#)
+GitHub: [github.com/vikram](https://github.com/vikramsumit)
 
 ## License
 
-MIT
+MIT — Free to use and modify.

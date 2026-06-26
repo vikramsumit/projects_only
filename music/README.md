@@ -69,12 +69,9 @@ A few image assets are present. Placeholder section for curated screenshots.
 
 ## Author
 
-Raju Raj
+GitHub: [github.com/sumit](https://github.com/sumitvikram)
 
-GitHub: [github.com/raju](https://github.com/raju)
-
-LinkedIn: [Coming soon](#)
 
 ## License
 
-MIT
+MIT — Free to use and modify.
