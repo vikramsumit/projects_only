@@ -15,7 +15,7 @@ A curated collection of academic, internship, and self-learning projects that de
 - Name: Sumit Vikram
 - Diploma in Computer Science anD Engineering
 - B.Tech IT
-- GitHub: [github.com/raju](https://github.com/vikramsumit)
+- GitHub: [github.com/sumit](https://github.com/vikramsumit)
 - LinkedIn: [linkedin.com/isumitvikram]
 - Email: sumitvikram22182018@gmail.com
 

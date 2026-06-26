@@ -66,4 +66,4 @@ LinkedIn: [Coming soon](#)
 
 ## License
 
-MIT
+MIT — Free to use and modify.

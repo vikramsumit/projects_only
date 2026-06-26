@@ -51,9 +51,9 @@ Screenshots are not available yet. Placeholder section for future visual documen
 
 Raju Raj
 
-GitHub: [github.com/raju](https://github.com/raju)
+GitHub: [github.com/vikram](https://github.com/vikramsumit)
 
-LinkedIn: [Coming soon](#)
+LinkedIn: [linkedin.com/isumitvikram]
 
 ## License
 

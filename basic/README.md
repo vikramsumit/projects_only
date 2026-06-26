@@ -50,10 +50,5 @@ Screenshots are not available yet. Placeholder section for future screenshots.
 
 ## Author
 
-Raju Raj
 
-GitHub: [github.com/raju](https://github.com/raju)
-
-## License
-
-MIT
+GitHub: [github.com/sumit](https://github.com/vikramsumit)
