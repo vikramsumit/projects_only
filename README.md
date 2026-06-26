@@ -1,4 +1,4 @@
-# Raju Raj | Software Portfolio
+# Sumit VIkram | All Projects
 
 A curated collection of academic, internship, and self-learning projects that demonstrate my growth in software development, web applications, backend systems, automation, and data-driven solutions.
 
@@ -12,11 +12,12 @@ A curated collection of academic, internship, and self-learning projects that de
 
 ## About Me
 
-- Name: Raju Raj
-- B.Tech CSE
-- GitHub: [github.com/raju](https://github.com/raju)
-- LinkedIn: [Coming soon](#)
-- Email: your.email@example.com
+- Name: Sumit Vikram
+- Diploma in Computer Science anD Engineering
+- B.Tech IT
+- GitHub: [github.com/raju](https://github.com/vikramsumit)
+- LinkedIn: [linkedin.com/isumitvikram]
+- Email: sumitvikram22182018@gmail.com
 
 ## Skills
 
